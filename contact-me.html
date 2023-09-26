@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact ME</title>
+    <link rel="stylesheet" href="./css/contact.css" />
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav>
+      <div class="nav-left">
+        <ul>
+          <li>
+            <img src="assets/logo.png" alt="logo" />
+          </li>
+          <li>
+            <a href="index.html" class="text-black">Home</a>
+          </li>
+          <li>
+            <a href="#" class="text-black">My Project</a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <a href="#contact-form">Contact Me</a>
+      </div>
+    </nav>
+    <!-- navbar -->
+
+    <!-- Contact -->
+    <div>
+      <h1 class="text-center margin-x" id="contact-form">GET IN TOUCH</h1>
+    </div>
+
+    <form action="">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" name="" id="name" />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" name="" id="email" />
+      </div>
+      <div>
+        <label for="phone">Phone Number</label>
+        <input type="email" name="" id="phone" />
+      </div>
+      <div>
+        <label for="subject">Subject</label>
+        <select id="subject" required>
+          <option value="Fullstack Developer">Fullstack Developer</option>
+          <option value="Backend Developer">Backend Developer</option>
+          <option value="Devops">Devops</option>
+        </select>
+        <!-- <input type="email" name="" id="subject" /> -->
+      </div>
+      <div>
+        <label for="message">Your Message</label>
+        <textarea name="" id="message" cols="20" rows="10"></textarea>
+      </div>
+
+      <div>
+        <button>submit</button>
+      </div>
+    </form>
+    <!-- end contact -->
+  </body>
+</html>

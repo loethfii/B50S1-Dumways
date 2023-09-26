@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+
+* {
+  text-decoration: none;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+body {
+  background-color: #dadee2;
+}
+
+nav {
+  /* flex container */
+  background-color: #f2f1f0;
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  width: 101%;
+  margin-left: -8px;
+  margin-top: -9px;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+}
+
+nav ul li {
+  margin-right: 80px;
+  font-size: 20px;
+  padding-left: 29px;
+}
+
+.text-black {
+  color: black;
+}
+
+nav ul li .active {
+  color: orangered;
+}
+
+.nav-left {
+  /* flex item */
+  flex: 50%; /* mengatur lebarnya */
+  /* background-color: red; */
+}
+
+.nav-right {
+  /* flex item */
+  flex: 50%;
+  text-align: end;
+  margin-right: 70px;
+  /* background-color: blue; */
+}
+
+.nav-right a {
+  background-color: black;
+  padding: 8px 25px;
+  color: white;
+  border-radius: 5px;
+}
+
+.nav-right a:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+
+.margin-x {
+  margin-top: 100px;
+}
+
+form {
+  border-radius: 12px;
+  width: 506px;
+  margin: 50px auto;
+  padding: 10px;
+  margin-top: -15px;
+}
+
+form div {
+  margin-top: 25px;
+}
+
+label {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  background-color: aliceblue;
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 7px;
+  resize: none;
+  box-shadow: 0px 2px grey;
+}
+
+form div select {
+  border: 1px solid black;
+  background-color: aliceblue;
+  width: 104%;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 7px;
+  font-size: 17px;
+  box-shadow: 0px 2px grey;
+  font-weight: bold;
+}
+
+.text-center {
+  text-align: center;
+}
+
+button {
+  width: 100px;
+  height: 47px;
+  border-radius: 20px;
+  margin: 0px 80%;
+  margin-bottom: 20px;
+  font-size: 23px;
+  background-color: black;
+  color: white;
+}
+
+button:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
