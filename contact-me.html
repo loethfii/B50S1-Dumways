@@ -35,20 +35,21 @@
 
     <form action="">
       <div>
-        <label for="name">Name</label>
-        <input type="text" name="" id="name" />
+        <label for="input-name">Name</label>
+        <input type="text" name="" id="input-name" required />
       </div>
       <div>
-        <label for="email">Email</label>
-        <input type="email" name="" id="email" />
+        <label for="input-email">Email</label>
+        <input type="email" name="" id="input-email" required />
       </div>
       <div>
-        <label for="phone">Phone Number</label>
-        <input type="email" name="" id="phone" />
+        <label for="input-phone">Phone Number</label>
+        <input type="text" name="" id="input-phone" required />
       </div>
       <div>
-        <label for="subject">Subject</label>
-        <select id="subject" required>
+        <label for="input-subject">Subject</label>
+        <select id="input-subject" required>
+          <option hidden>pilih subject</option>
           <option value="Fullstack Developer">Fullstack Developer</option>
           <option value="Backend Developer">Backend Developer</option>
           <option value="Devops">Devops</option>
@@ -56,14 +57,29 @@
         <!-- <input type="email" name="" id="subject" /> -->
       </div>
       <div>
-        <label for="message">Your Message</label>
-        <textarea name="" id="message" cols="20" rows="10"></textarea>
+        <label for="input-message">Your Message</label>
+        <textarea
+          name=""
+          id="input-message"
+          cols="20"
+          rows="10"
+          required
+        ></textarea>
       </div>
 
       <div>
-        <button>submit</button>
+        <button
+          type="button"
+          style="cursor: pointer"
+          onclick="formSubmission()"
+        >
+          submit
+        </button>
       </div>
     </form>
     <!-- end contact -->
+    <!-- script -->
+    <script src="./js/contact.js"></script>
+    <!-- end script -->
   </body>
 </html>
