@@ -1,5 +1,27 @@
 let contentData = [];
 
+let detailBulan;
+let detailHari;
+
+function selisihTanggal(start, end) {
+  let dateStart = new Date(start);
+  let endStart = new Date(end);
+
+  let selisih = endStart - dateStart;
+
+  let jumlahHari = selisih / (1000 * 60 * 60 * 24);
+
+  let berapaBulan = jumlahHari / 29;
+
+  let jumlahBulan = Math.floor(berapaBulan);
+
+  let sisaHari = jumlahHari % 29;
+
+  detailBulan = jumlahBulan;
+
+  detailHari = sisaHari;
+}
+
 function addProject(event) {
   event.preventDefault();
 
@@ -20,6 +42,8 @@ function addProject(event) {
 
   let image = document.getElementById("input-blog-image").files;
 
+  selisihTanggal(startProject, endProject);
+
   if (projectName === "") {
     alert("nama project tidak boleh kosong");
     return;
@@ -37,8 +61,8 @@ function addProject(event) {
   image = URL.createObjectURL(image[0]);
   let dataProject = {
     project: projectName,
-    startproject: startProject,
-    endproject: endProject,
+    bulan: detailBulan,
+    hari: detailHari,
     description: description,
     tech: [terNodeJs, terReactJs, terNextJs, terTypeScript],
     image: image,
@@ -57,9 +81,13 @@ function renderBlog() {
             <div class="container">
               <img src="${value.image}" alt="" id="make-link-to" />
               <h4>${value.project}</h4>
-              <p style="font-style: normal; color: #868686; margin-top: -12px">durasi : ${
-                value.startproject
-              } s/d ${value.endproject}</p>
+              <p style="font-style: normal; color: #868686; margin-top: -12px">
+                 durasi : ${
+                   value.bulan === 0
+                     ? value.hari + ` hari`
+                     : value.bulan + ` bulan ` + value.hari + ` hari`
+                 }
+              </p>
               <p>
                 ${value.description}
               </p>

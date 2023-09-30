@@ -208,7 +208,6 @@ form .input-blog-image-group label p {
   padding-top: 8px;
   padding-left: 16px;
   padding-right: 19px;
-  /* margin: -22px; */
   margin-bottom: 14.6px;
   color: #b2abab;
 }
@@ -282,7 +281,7 @@ form .submit-data button:hover {
 }
 
 .row-project .col-project img {
-  margin-top: 5px;
+  margin-top: 18px;
   border-radius: 8px;
   width: 100%;
 }
