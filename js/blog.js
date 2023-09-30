@@ -52,7 +52,6 @@ function renderBlog() {
   document.getElementById("content").innerHTML = "";
 
   contentData.forEach(function (value, index, arr) {
-    console.log(value);
     document.getElementById("content").innerHTML += `
     <div class="col-project">
             <div class="container">
@@ -93,6 +92,6 @@ function renderBlog() {
   let toLink = document.getElementById("make-link-to");
 
   toLink.addEventListener("click", function () {
-    window.location.href = "https://google.com";
+    window.location.href = "detail-blog.html";
   });
 }
