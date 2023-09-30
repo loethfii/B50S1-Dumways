@@ -50,6 +50,11 @@ function addProject(event) {
   } else if (startProject === "" || endProject === "") {
     alert("tanggal mulai dan tanggal selesai project tidak boleh kosong");
     return;
+  } else if (detailBulan < 0 || detailHari < 0) {
+    alert(
+      "tanggal mulai gak boleh lebih dari tanggal selesai kocak, malah nyari bug 😂🤣"
+    );
+    return;
   } else if (description === "") {
     alert("deskripsi tidak boleh kosong");
     return;
