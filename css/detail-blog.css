@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+
+* {
+  text-decoration: none;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+body {
+  background-color: #dadee2;
+}
+
+nav {
+  /* flex container */
+  background-color: #f2f1f0;
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  width: 101%;
+  margin-left: -8px;
+  margin-top: -9px;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+}
+
+nav ul li {
+  margin-right: 80px;
+  font-size: 20px;
+  padding-left: 29px;
+}
+
+.text-black {
+  color: black;
+  font-weight: bold;
+}
+
+nav ul li .active {
+  color: black;
+}
+
+.nav-left {
+  /* flex item */
+  flex: 50%; /* mengatur lebarnya */
+  /* background-color: red; */
+}
+
+.nav-right {
+  /* flex item */
+  flex: 50%;
+  text-align: end;
+  margin-right: 70px;
+  /* background-color: blue; */
+}
+
+.nav-right a {
+  background-color: black;
+  padding: 8px 25px;
+  color: white;
+  border-radius: 5px;
+}
+
+.nav-right a:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+
+.margin-x {
+  margin-top: 100px;
+}
+
+/* content */
+.container {
+  max-width: 1350px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.content-flex {
+  display: flex;
+}
+
+.content-flex .left {
+  width: 50%;
+  height: 400px;
+}
+
+.content-flex .left img {
+  width: 100%;
+}
+
+.content-flex .right {
+  width: 50%;
+  height: 400px;
+}
+
+.content-flex .right .right-content {
+  margin-left: 40px;
+}
+
+/* description */
+.container .tengah {
+  text-align: justify;
+  line-height: 30px;
+}
