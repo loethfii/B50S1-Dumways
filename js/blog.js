@@ -84,18 +84,22 @@ function renderBlog() {
     document.getElementById("content").innerHTML += `
     <div class="col-project">
             <div class="container">
-              <img src="${value.image}" alt="" id="make-link-to" />
-              <h4>${value.project}</h4>
-              <p style="font-style: normal; color: #868686; margin-top: -12px">
-                 durasi : ${
-                   value.bulan === 0
-                     ? value.hari + ` hari`
-                     : value.bulan + ` bulan ` + value.hari + ` hari`
-                 }
-              </p>
-              <p>
-                ${value.description}
-              </p>
+              <a href="detail-blog.html">
+                <div class="img-control">
+                  <img src="${value.image}" alt="" id="make-link-to" />
+                </div>
+                <h4 style="color: black">${value.project}</h4>
+                <p style="font-style: normal; color: #868686; margin-top: -12px">
+                  durasi : ${
+                    value.bulan === 0
+                      ? value.hari + ` hari`
+                      : value.bulan + ` bulan ` + value.hari + ` hari`
+                  }
+                </p>
+                <p class="description" style="text-align: justify">
+                  ${value.description}
+                </p>
+              </a>
              
             ${value.tech[0] === null ? `` : `<i class="fab fa-node fa-xl"></i>`}
             ${
