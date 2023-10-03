@@ -17,24 +17,30 @@
   <body>
     <!-- navbar -->
     <nav>
-      <div class="nav-left">
-        <ul>
-          <li>
-            <img src="assets/logo.png" alt="logo" />
-          </li>
-          <li>
-            <a href="index.html" style="color: black">Home</a>
-          </li>
-          <li>
-            <a href="#" class="text-black active">My Project</a>
-          </li>
-        </ul>
-      </div>
-      <div class="nav-right">
-        <a href="contact-me.html">Contact Me</a>
+      <div class="container">
+        <div class="content-lr">
+          <div class="nav-left">
+            <ul>
+              <li>
+                <img src="assets/logo.png" alt="logo" />
+              </li>
+              <li>
+                <a href="index.html" class="text-black hilang">Home</a>
+              </li>
+              <li>
+                <a href="blog.html" class="text-black mypr hilang active"
+                  >My Project</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="nav-right hilang">
+            <a href="contact-me.html">Contact Me</a>
+          </div>
+        </div>
       </div>
     </nav>
-    <!-- End navbar -->
+    <!-- navbar end-->
 
     <!-- Form -->
     <div class="container mg-top-80">
@@ -63,70 +69,72 @@
             <textarea id="input-description" rows="4" cols="50"></textarea>
           </div>
           <!-- technologies -->
-          <h3 for="input-project-description">Technologies</h3>
-          <div class="input-form checkbox-gg">
-            <div class="left-checkbox">
-              <div>
-                <table>
-                  <tr>
-                    <td>
-                      <input
-                        style="box-shadow: none"
-                        type="checkbox"
-                        value="Node Js"
-                        id="node-js-checkbox"
-                      />
-                    </td>
-                    <td><label for="">Node Js</label></td>
-                  </tr>
-                </table>
+          <div class="technologies">
+            <h3 for="input-project-description">Technologies</h3>
+            <div class="input-form checkbox-gg">
+              <div class="left-checkbox">
+                <div>
+                  <table>
+                    <tr>
+                      <td>
+                        <input
+                          style="box-shadow: none"
+                          type="checkbox"
+                          value="Node Js"
+                          id="node-js-checkbox"
+                        />
+                      </td>
+                      <td><label for="">Node Js</label></td>
+                    </tr>
+                  </table>
+                </div>
+                <div>
+                  <table>
+                    <tr>
+                      <td>
+                        <input
+                          style="box-shadow: none"
+                          type="checkbox"
+                          value="Node Js"
+                          id="next-js-checkbox"
+                        />
+                      </td>
+                      <td><label for="">Next Js</label></td>
+                    </tr>
+                  </table>
+                </div>
               </div>
-              <div>
-                <table>
-                  <tr>
-                    <td>
-                      <input
-                        style="box-shadow: none"
-                        type="checkbox"
-                        value="Node Js"
-                        id="next-js-checkbox"
-                      />
-                    </td>
-                    <td><label for="">Next Js</label></td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-            <div class="right-checkbox">
-              <div>
-                <table>
-                  <tr>
-                    <td>
-                      <input
-                        style="box-shadow: none"
-                        type="checkbox"
-                        value="React Js"
-                        id="react-js-checkbox"
-                      />
-                    </td>
-                    <td><label for="">React Js</label></td>
-                  </tr>
-                </table>
-              </div>
-              <div>
-                <table>
-                  <tr>
-                    <td>
-                      <input
-                        style="box-shadow: none"
-                        type="checkbox"
-                        value="Type Script"
-                        id="type-script-checkbox"
-                      />
-                    </td>
-                    <td><label for="">Type Script</label></td>
-                  </tr>
-                </table>
+              <div class="right-checkbox">
+                <div>
+                  <table>
+                    <tr>
+                      <td>
+                        <input
+                          style="box-shadow: none"
+                          type="checkbox"
+                          value="React Js"
+                          id="react-js-checkbox"
+                        />
+                      </td>
+                      <td><label for="">React Js</label></td>
+                    </tr>
+                  </table>
+                </div>
+                <div>
+                  <table>
+                    <tr>
+                      <td>
+                        <input
+                          style="box-shadow: none"
+                          type="checkbox"
+                          value="Type Script"
+                          id="type-script-checkbox"
+                        />
+                      </td>
+                      <td><label for="">Type Script</label></td>
+                    </tr>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
@@ -168,7 +176,9 @@
                     <img src="assets/bing.webp" alt="" id="make-link-to" />
                   </div>
 
-                  <h4 style="color: black">Dumways Mobile APP - 2021</h4>
+                  <h4 style="color: black" class="in-600">
+                    Dumways Mobile APP - 2021
+                  </h4>
                   <p style="font-style: normal; color: #868686">
                     durasi : 3 Bulan
                   </p>

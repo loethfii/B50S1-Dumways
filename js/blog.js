@@ -88,30 +88,38 @@ function renderBlog() {
                 <div class="img-control">
                   <img src="${value.image}" alt="" id="make-link-to" />
                 </div>
-                <h4 style="color: black">${value.project}</h4>
-                <p style="font-style: normal; color: #868686; margin-top: -12px">
+                <h4 style="color: black" class="in-600">${value.project}</h4>
+                <p style="font-style: normal; color: #868686; margin-top: -12px" class="in-600">
                   durasi : ${
                     value.bulan === 0
                       ? value.hari + ` hari`
                       : value.bulan + ` bulan ` + value.hari + ` hari`
                   }
                 </p>
-                <p class="description" style="text-align: justify">
+                <p class="description in-600" style="text-align: justify">
                   ${value.description}
                 </p>
               </a>
              
-            ${value.tech[0] === null ? `` : `<i class="fab fa-node fa-xl"></i>`}
             ${
-              value.tech[1] === null ? `` : `<i class="fab fa-react fa-xl"></i>`
+              value.tech[0] === null
+                ? ``
+                : `<i class="fab fa-node fa-xl in-600"></i>`
             }
             ${
-              value.tech[2] === null ? `` : `<i class="fab fa-vuejs fa-xl"></i>`
+              value.tech[1] === null
+                ? ``
+                : `<i class="fab fa-react fa-xl in-600"></i>`
+            }
+            ${
+              value.tech[2] === null
+                ? ``
+                : `<i class="fab fa-vuejs fa-xl in-600"></i>`
             }
             ${
               value.tech[3] === null
                 ? ``
-                : `<i class="fab fa-js-square fa-xl"></i>`
+                : `<i class="fab fa-js-square fa-xl in-600"></i>`
             }
             
             <p style="width: 50%"></p>

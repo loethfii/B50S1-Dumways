@@ -6,30 +6,34 @@
 }
 
 body {
-  background-color: #dadee2;
+  background-color: #e3e7eb;
 }
 
 nav {
   /* flex container */
   background-color: #f2f1f0;
-  display: flex;
   align-items: center;
-  height: 10vh;
-  width: 101%;
-  margin-left: -8px;
-  margin-top: -9px;
+  width: 100%;
+  /* height: 100%; */
+}
+
+.content-lr {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 nav ul {
+  width: 300px;
   display: flex;
   list-style-type: none;
   align-items: center;
+  gap: 34px;
+  padding-left: 0;
 }
 
 nav ul li {
-  margin-right: 80px;
   font-size: 20px;
-  padding-left: 29px;
 }
 
 .text-black {
@@ -37,7 +41,7 @@ nav ul li {
 }
 
 nav ul li .active {
-  color: orangered;
+  color: rgb(227, 61, 0);
 }
 
 .nav-left {
@@ -50,11 +54,12 @@ nav ul li .active {
   /* flex item */
   flex: 50%;
   text-align: end;
-  margin-right: 70px;
+  padding-top: 22px;
   /* background-color: blue; */
 }
 
 .nav-right a {
+  /* margin-top: 200px; */
   background-color: black;
   padding: 8px 25px;
   color: white;
@@ -67,16 +72,44 @@ nav ul li .active {
   border: 2px solid black;
 }
 
-.margin-x {
-  margin-top: 100px;
+.active {
+  font-weight: bold;
+  color: black !important;
+}
+
+@media (max-width: 768px) {
+  .hilang {
+    display: none;
+  }
+
+  nav ul li {
+    margin-left: 10px;
+    margin-top: 8px;
+  }
+}
+
+/* Form input */
+.form-content {
+  margin-top: 87px;
+  overflow: hidden;
+}
+
+.form-content div h1 {
+  font-weight: bold;
 }
 
 form {
+  box-sizing: border-box;
   border-radius: 12px;
-  width: 506px;
-  margin: 50px auto;
-  padding: 10px;
-  margin-top: -15px;
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 600px) {
+  form {
+    width: 100%;
+  }
 }
 
 form div {
@@ -84,42 +117,74 @@ form div {
 }
 
 label {
-  font-size: 17px;
+  font-size: 20px;
   font-weight: bold;
 }
 
 input,
 textarea {
-  background-color: aliceblue;
+  border: none;
   width: 100%;
   padding: 10px;
   border-radius: 4px;
-  margin-top: 7px;
+  margin-top: 10px;
   resize: none;
-  box-shadow: 0px 2px grey;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 19px 38px, rgba(0, 0, 0, 0.1) 0px 15px 12px;
+}
+
+form div input {
+  height: 35px;
 }
 
 form div select {
-  border: 1px solid black;
-  background-color: aliceblue;
-  width: 104%;
+  border: none;
+  width: 103%;
   padding: 10px;
   border-radius: 4px;
   margin-top: 7px;
   font-size: 17px;
-  box-shadow: 0px 2px grey;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 19px 38px, rgba(0, 0, 0, 0.1) 0px 15px 12px;
   font-weight: bold;
+  height: 55px;
+}
+
+@media (max-width: 600px) {
+  form {
+    width: 100%;
+  }
+
+  label {
+    margin-left: 10px;
+  }
+
+  input,
+  textarea {
+    width: 90%;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  form div select {
+    width: 95%;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 
 .text-center {
   text-align: center;
 }
 
+input[type="text"],
+textarea {
+  font-size: 18px;
+}
+
 button {
-  width: 100px;
+  width: 140px;
   height: 47px;
   border-radius: 20px;
-  margin: 0px 80%;
+  margin: 0px 82%;
   margin-bottom: 20px;
   font-size: 23px;
   background-color: black;
@@ -129,4 +194,11 @@ button {
 button:hover {
   background-color: rgb(255, 255, 255);
   color: black;
+}
+
+@media (max-width: 600px) {
+  button {
+    margin-left: 0;
+    margin-left: 320px;
+  }
 }

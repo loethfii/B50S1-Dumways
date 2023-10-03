@@ -12,110 +12,101 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <link rel="stylesheet" href="css/universal.css" />
   </head>
   <body>
     <!-- navbar -->
     <nav>
-      <div class="nav-left">
-        <ul>
-          <li>
-            <img src="assets/logo.png" alt="logo" />
-          </li>
-          <li>
-            <a href="index.html" class="text-black active">Home</a>
-          </li>
-          <li>
-            <a href="blog.html" class="text-black">My Project</a>
-          </li>
-        </ul>
-      </div>
-      <div class="nav-right">
-        <a href="contact-me.html">Contact Me</a>
+      <div class="container">
+        <div class="content-lr">
+          <div class="nav-left">
+            <ul>
+              <li>
+                <img src="assets/logo.png" alt="logo" />
+              </li>
+              <li>
+                <a href="index.html" class="text-black active hilang">Home</a>
+              </li>
+              <li>
+                <a href="blog.html" class="text-black mypr hilang"
+                  >My Project</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="nav-right hilang">
+            <a href="contact-me.html">Contact Me</a>
+          </div>
+        </div>
       </div>
     </nav>
     <!-- navbar end-->
 
     <!-- Content Display -->
-    <div class="container" style="padding-bottom: 202px">
-      <section>
-        <div class="left">
-          <table>
-            <tr>
-              <td><h1>Hi Selamat Datang di Bio Ku</h1></td>
-            </tr>
-            <tr>
-              <td>
-                <p>
-                  Perkenalkan nama ku Raiden Ei, aku merupakan
-                  <a
-                    href="https://genshin-impact.fandom.com/wiki/The_Seven"
-                    class="link"
-                    >Archon</a
-                  >
-                  Electro dari inazuma, setelah penyerangan besar - besaran oleh
-                  <a
-                    href="https://genshin-impact.fandom.com/wiki/Fatui"
-                    class="link"
-                    >Fatui</a
-                  >
-                  kini aku merasa sangat bersalah atas rakyat ku, dikrit
-                  pemburuan
-                  <a
-                    href="https://genshin-impact.fandom.com/wiki/Vision"
-                    class="link"
-                    >Vision</a
-                  >
-                  harusnya tidak ku lakukan sejak awal kepemerintahan ku, yang
-                  membuat rakyat ku tidak lagi mempunyai vision, sejak saat itu
-                  inazuma menjadi sangat lemah karna perang saudara. Kini yang
-                  tersisa hanya kepercayaan dan kerja sama yang tinggi demi
-                  melindungi sisa - sisa wilayah inazuma, aku dan pasukan ku pun
-                  menjalani kerja sama dengan rekan ku yang dahulu memerangi
-                  kebijakan ku, demi merebut wilayah inazuma kembali. Lorem
-                  ipsum dolor sit amet, consectetur adipisicing elit. Suscipit,
-                  animi! Deleniti distinctio molestias quasi rem commodi, eum
-                  iste repellat quis odio quaerat exercitationem ullam error
-                  eaque ut laudantium optio necessitatibus perferendis id sed,
-                  nulla eos possimus qui neque eligendi.
-                </p>
-              </td>
-            </tr>
-            <tr>
-              <td style="display: flex; padding-top: 50px">
-                <button
-                  onclick="window.location.href='contact-me.html';"
-                  class="btn-black-rounded"
-                >
-                  Contact Me
-                </button>
-                <p>Download CV</p>
-                <i
-                  class="fa-solid fa-download"
-                  style="padding-top: 18px; padding-left: 10px"
-                ></i>
-              </td>
-            </tr>
-            <tr>
-              <td style="display: flex; padding-top: 50px">
-                <div class="icon-left">
-                  <i class="fa-brands fa-linkedin fa-4x"></i>
-                  <i class="fa-brands fa-instagram fa-4x space-left"></i>
-                  <i class="fa-brands fa-facebook fa-4x space-left"></i>
-                  <i class="fa-brands fa-twitter fa-4x space-left"></i>
-                </div>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="right">
-          <div class="card">
-            <img src="./assets/raidenshogun4.jpg" alt="" />
-            <h2 class="text-center">Raiden Ei</h2>
-            <h3 class="text-center">Electro Archon</h3>
+    <div class="container mg-top-sekian">
+      <div class="content-value">
+        <div class="value-value-1">
+          <div class="left">
+            <h1>Hi Selamat Datang di Bio Ku</h1>
+            <p>
+              Perkenalkan nama ku Raiden Ei, aku merupakan
+              <a
+                href="https://genshin-impact.fandom.com/wiki/The_Seven"
+                class="link"
+                >Archon</a
+              >
+              Electro dari inazuma, setelah penyerangan besar - besaran oleh
+              <a
+                href="https://genshin-impact.fandom.com/wiki/Fatui"
+                class="link"
+                >Fatui</a
+              >
+              kini aku merasa sangat bersalah atas rakyat ku, dikrit pemburuan
+              <a
+                href="https://genshin-impact.fandom.com/wiki/Vision"
+                class="link"
+                >Vision</a
+              >
+              harusnya tidak ku lakukan sejak awal kepemerintahan ku, yang
+              membuat rakyat ku tidak lagi mempunyai vision, sejak saat itu
+              inazuma menjadi sangat lemah karna perang saudara. Kini yang
+              tersisa hanya kepercayaan dan kerja sama yang tinggi demi
+              melindungi sisa - sisa wilayah inazuma, aku dan pasukan ku pun
+              menjalani kerja sama dengan rekan ku yang dahulu memerangi
+              kebijakan ku, demi merebut wilayah inazuma kembali.
+            </p>
+            <div class="contact-button-download">
+              <button
+                onclick="window.location.href='contact-me.html';"
+                class="il-block"
+              >
+                contact
+              </button>
+              <p style="margin-top: 32px">Download CV</p>
+              <i
+                class="fa-solid fa-download il-block"
+                style="padding-top: 18px; padding-left: 10px"
+              ></i>
+            </div>
+            <div class="icon-left">
+              <i class="fa-brands fa-linkedin fa-3x"></i>
+              <i class="fa-brands fa-instagram fa-3x space-left"></i>
+              <i class="fa-brands fa-facebook fa-3x space-left"></i>
+              <i class="fa-brands fa-twitter fa-3x space-left"></i>
+            </div>
+          </div>
+          <div class="right">
+            <div class="card">
+              <img src="./assets/raidenshogun4.jpg" alt="" />
+              <h2 class="text-center">Raiden Ei</h2>
+              <h3 class="text-center">Electro Archon</h3>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
     </div>
+
     <!-- Content Display end -->
   </body>
 </html>
