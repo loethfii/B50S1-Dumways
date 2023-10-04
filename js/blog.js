@@ -80,21 +80,28 @@ function addProject(event) {
 function renderBlog() {
   document.getElementById("content").innerHTML = "";
 
-  contentData.forEach(function (value, index, arr) {
+  contentData.forEach(function (value) {
+    let durasi = "";
+    if (value.bulan >= 1 && value.hari >= 1) {
+      durasi = value.bulan + ` bulan ` + value.hari + ` hari`;
+    } else if (value.bulan >= 1 && value.hari === 0) {
+      durasi = value.bulan + ` bulan `;
+    } else if (value.hari === 0) {
+      durasi = `selesai di hari yang sama`;
+    } else {
+      durasi = value.hari + ` hari`;
+    }
+
     document.getElementById("content").innerHTML += `
     <div class="col-project">
             <div class="container">
               <a href="detail-blog.html">
                 <div class="img-control">
-                  <img src="${value.image}" alt="" id="make-link-to" />
+                  <img src="${value.image}" alt="" />
                 </div>
                 <h4 style="color: black" class="in-600">${value.project}</h4>
                 <p style="font-style: normal; color: #868686; margin-top: -12px" class="in-600">
-                  durasi : ${
-                    value.bulan === 0
-                      ? value.hari + ` hari`
-                      : value.bulan + ` bulan ` + value.hari + ` hari`
-                  }
+                  durasi : ${durasi}
                 </p>
                 <p class="description in-600" style="text-align: justify">
                   ${value.description}
@@ -130,13 +137,6 @@ function renderBlog() {
               </div>
             </div>
           </div>
-    
     `;
-  });
-
-  let toLink = document.getElementById("make-link-to");
-
-  toLink.addEventListener("click", function () {
-    window.location.href = "detail-blog.html";
   });
 }

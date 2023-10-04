@@ -90,7 +90,6 @@ nav ul li .active {
 
 /* Form input */
 .form-content {
-  margin-top: 87px;
   overflow: hidden;
 }
 
@@ -123,7 +122,6 @@ label {
 
 input,
 textarea {
-  border: none;
   width: 100%;
   padding: 10px;
   border-radius: 4px;
@@ -137,7 +135,6 @@ form div input {
 }
 
 form div select {
-  border: none;
   width: 103%;
   padding: 10px;
   border-radius: 4px;
@@ -180,15 +177,16 @@ textarea {
   font-size: 18px;
 }
 
-button {
+.btn-flex button {
   width: 140px;
-  height: 47px;
+  height: 40px;
   border-radius: 20px;
   margin: 0px 82%;
   margin-bottom: 20px;
   font-size: 23px;
   background-color: black;
   color: white;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 19px 38px, rgba(0, 0, 0, 0.1) 0px 15px 12px;
 }
 
 button:hover {
@@ -197,8 +195,16 @@ button:hover {
 }
 
 @media (max-width: 600px) {
-  button {
+  /* .btn-flex {
+    display: flex;
+    padding-right: 20px;
+  } */
+
+  .btn-flex button {
+    height: 60px;
+    width: 100px;
     margin-left: 0;
-    margin-left: 320px;
+    margin-left: 250px;
+    width: 130px;
   }
 }

@@ -6,39 +6,42 @@
 }
 
 body {
-  background-color: #dadee2;
+  background-color: #e3e7eb;
 }
 
 nav {
   /* flex container */
   background-color: #f2f1f0;
-  display: flex;
   align-items: center;
-  height: 10vh;
-  width: 101%;
-  margin-left: -8px;
-  margin-top: -9px;
+  width: 100%;
+  /* height: 100%; */
+}
+
+.content-lr {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 nav ul {
+  width: 300px;
   display: flex;
   list-style-type: none;
   align-items: center;
+  gap: 34px;
+  padding-left: 0;
 }
 
 nav ul li {
-  margin-right: 80px;
   font-size: 20px;
-  padding-left: 29px;
 }
 
 .text-black {
   color: black;
-  font-weight: bold;
 }
 
 nav ul li .active {
-  color: black;
+  color: rgb(227, 61, 0);
 }
 
 .nav-left {
@@ -51,11 +54,12 @@ nav ul li .active {
   /* flex item */
   flex: 50%;
   text-align: end;
-  margin-right: 70px;
+  padding-top: 22px;
   /* background-color: blue; */
 }
 
 .nav-right a {
+  /* margin-top: 200px; */
   background-color: black;
   padding: 8px 25px;
   color: white;
@@ -68,8 +72,20 @@ nav ul li .active {
   border: 2px solid black;
 }
 
-.margin-x {
-  margin-top: 100px;
+.active {
+  font-weight: bold;
+  color: black !important;
+}
+
+@media (max-width: 768px) {
+  .hilang {
+    display: none;
+  }
+
+  nav ul li {
+    margin-left: 10px;
+    margin-top: 8px;
+  }
 }
 
 /* content */
@@ -83,20 +99,59 @@ nav ul li .active {
 
 .content-flex {
   display: flex;
+  gap: 70px;
+  flex-wrap: wrap;
 }
 
 .content-flex .left {
   width: 50%;
-  height: 400px;
+  max-height: 430px;
+  overflow: hidden;
 }
 
 .content-flex .left img {
   width: 100%;
+  object-fit: cover;
+  object-position: 15% 100%;
 }
 
 .content-flex .right {
-  width: 50%;
-  height: 400px;
+  width: 30%;
+}
+
+@media (max-width: 768px) {
+  .content-flex .left {
+    width: 100%;
+    margin-bottom: -60px;
+  }
+
+  .content-flex .right {
+    width: 100%;
+    padding-left: 10px;
+  }
+
+  .content-flex .right h3 {
+    text-align: center;
+  }
+}
+
+.right .duration-date {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+i {
+  padding-top: 8px;
+}
+
+.duration-date p {
+  margin: 0;
+}
+
+.tecnologies {
+  display: flex;
+  gap: 70px;
 }
 
 .content-flex .right .right-content {
@@ -107,4 +162,10 @@ nav ul li .active {
 .container .tengah {
   text-align: justify;
   line-height: 30px;
+}
+
+@media (max-width: 768px) {
+  .container .tengah {
+    padding: 10px;
+  }
 }

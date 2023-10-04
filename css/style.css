@@ -55,11 +55,9 @@ nav ul li .active {
   flex: 50%;
   text-align: end;
   padding-top: 22px;
-  /* background-color: blue; */
 }
 
 .nav-right a {
-  /* margin-top: 200px; */
   background-color: black;
   padding: 8px 25px;
   color: white;
@@ -90,10 +88,6 @@ nav ul li .active {
 
 /* content */
 
-.mg-top-sekian {
-  margin-top: 70px;
-}
-
 .content-value {
   background-color: #ffffff;
   padding-right: 68px;
@@ -102,9 +96,13 @@ nav ul li .active {
   padding-bottom: 63px;
   box-sizing: border-box;
   border-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 19px 38px, rgba(0, 0, 0, 0.1) 0px 15px 12px;
 }
 
 @media (max-width: 600px) {
+  #mg-top-none {
+    margin-top: 0;
+  }
   .content-value {
     padding-left: 0;
     padding-right: 0;
