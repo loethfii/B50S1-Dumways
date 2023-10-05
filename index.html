@@ -23,7 +23,9 @@
           <div class="nav-left">
             <ul>
               <li>
-                <img src="assets/logo.png" alt="logo" />
+                <a href="index.html">
+                  <img src="assets/logo.png" alt="logo" />
+                </a>
               </li>
               <li>
                 <a href="index.html" class="text-black active hilang">Home</a>
@@ -38,11 +40,33 @@
           <div class="nav-right hilang">
             <a href="contact-me.html">Contact Me</a>
           </div>
+          <div class="nav-right" id="barsmenu">
+            <button
+              style="
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+              "
+              onclick="openHamburger(this)"
+            >
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+            </button>
+          </div>
         </div>
       </div>
     </nav>
     <!-- navbar end-->
-
+    <!-- content responsive / hamburger -->
+    <div class="hamburger-nav-container" id="hamburger-nav-container">
+      <a href="index.html" class="hamburger-active">Home</a>
+      <a href="blog.html" class="">My Project</a>
+      <a href="contact-me.html" class=""
+        ><div class="hamburger-contact-me">Contact Me</div></a
+      >
+    </div>
+    <!-- end content responsive / hamburger -->
     <!-- Content Display -->
     <div class="container mg-top-70" id="mg-top-none">
       <div class="content-value">
@@ -108,5 +132,8 @@
     </div>
 
     <!-- Content Display end -->
+    <!-- script -->
+    <script src="js/hamburger.js"></script>
+    <!-- end script -->
   </body>
 </html>
