@@ -85,6 +85,10 @@ nav ul li .active {
     display: none;
   }
 
+  .nav-left ul li:nth-child(3) #my-project {
+    display: none;
+  }
+
   nav ul li {
     margin-left: 10px;
     margin-top: 8px;
