@@ -50,6 +50,11 @@ nav ul li .active {
   /* background-color: red; */
 }
 
+.nav-left ul li:nth-child(3) a {
+  display: inline-block;
+  width: 85px;
+}
+
 .nav-right {
   /* flex item */
   flex: 50%;

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testimonial</title>
+    <link rel="stylesheet" href="css/testimonial.css" />
+    <link rel="stylesheet" href="css/universal.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav>
+      <div class="container">
+        <div class="content-lr">
+          <div class="nav-left">
+            <ul>
+              <li>
+                <a href="index.html">
+                  <img src="assets/logo.png" alt="logo" />
+                </a>
+              </li>
+              <li>
+                <a href="index.html" class="text-black hilang">Home</a>
+              </li>
+              <li>
+                <a href="blog.html" class="text-black hilang">My Project</a>
+              </li>
+              <li>
+                <a href="testimonial.html" class="text-black hilang active"
+                  >Testimonials</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="nav-right hilang">
+            <a href="contact-me.html">Contact Me</a>
+          </div>
+          <div class="nav-right" id="barsmenu">
+            <button
+              style="
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+              "
+              onclick="openHamburger(this)"
+            >
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar end-->
+    <!-- content responsive / hamburger -->
+    <div class="hamburger-nav-container" id="hamburger-nav-container">
+      <a href="index.html" class="">Home</a>
+      <a href="blog.html" class="">My Project</a>
+      <a href="blog.html" class="hamburger-active">Testimonials</a>
+      <a href="contact-me.html" class=""
+        ><div class="hamburger-contact-me">Contact Me</div></a
+      >
+    </div>
+    <!-- end content responsive / hamburger -->
+    <!-- content sortir testimonials -->
+    <div class="container mg-top-70">
+      <h1 class="text-center">My Testimonials</h1>
+      <h3 class="text-center">Rating By Star</h3>
+      <div class="content-star">
+        <p onclick="testiMonialAll()">All</p>
+        <p onclick="testiMonialRate(1)">1<i class="fas fa-star"></i></p>
+        <p onclick="testiMonialRate(2)">2<i class="fas fa-star"></i></p>
+        <p onclick="testiMonialRate(3)">3<i class="fas fa-star"></i></p>
+        <p onclick="testiMonialRate(4)">4<i class="fas fa-star"></i></p>
+        <p onclick="testiMonialRate(5)">5<i class="fas fa-star"></i></p>
+      </div>
+    </div>
+    <!-- end content sortir testimonials -->
+    <!-- content card testimonial -->
+    <section class="container mg-top-50">
+      <div class="row-card" id="testimonials">
+        <!-- <div class="col-card">
+          <div class="img-control">
+            <img
+              src="https://images.unsplash.com/photo-1485875437342-9b39470b3d95?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2346&q=80"
+              alt=""
+            />
+          </div>
+          <div class="testimonial-control">
+            <p>"Ampas bat, sangat kecewa!"</p>
+            <p>Maman Abdul rahman</p>
+            <p>1<i class="fas fa-star"></i></p>
+          </div>
+        </div> -->
+      </div>
+    </section>
+    <!-- end content card testimonial -->
+    <script src="js/hamburger.js"></script>
+    <script src="js/testimonial.js"></script>
+  </body>
+</html>
