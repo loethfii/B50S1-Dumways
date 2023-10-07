@@ -38,3 +38,20 @@ button {
 button:hover {
   background-color: black;
 }
+
+.card-uji {
+  width: 500px;
+  height: 500px;
+  border: 2px solid black;
+  box-sizing: border-box;
+  margin: 50px auto;
+  background-color: white;
+  position: relative;
+}
+
+img {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  filter: hue-rotate(400deg);
+}
