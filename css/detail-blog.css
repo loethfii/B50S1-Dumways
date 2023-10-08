@@ -255,3 +255,43 @@ i {
     transform: translate(0px, -9px) rotate(225deg);
   }
 }
+
+@media only screen and (max-width: 350px) {
+  #barsmenu {
+    display: block;
+    /* padding-right: 10px; */
+    position: absolute;
+    right: 0;
+  }
+
+  .bar1,
+  .bar3 {
+    background-color: black;
+    width: 35px;
+    height: 5px;
+    border-radius: 20px;
+    margin-bottom: 4px;
+    transition: 0.4s;
+  }
+
+  .bar2 {
+    background-color: black;
+    width: 35px;
+    height: 5px;
+    border-radius: 20px;
+    margin-bottom: 4px;
+    transition: 0.1s;
+  }
+
+  .change .bar1 {
+    transform: translate(0px, 8px) rotate(-225deg);
+  }
+
+  .change .bar2 {
+    opacity: 0;
+  }
+
+  .change .bar3 {
+    transform: translate(0px, -9px) rotate(225deg);
+  }
+}

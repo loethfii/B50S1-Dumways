@@ -80,7 +80,7 @@ nav ul li .active {
   color: black !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   .hilang {
     display: none;
   }
@@ -108,6 +108,7 @@ nav ul li .active {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 19px 38px, rgba(0, 0, 0, 0.1) 0px 15px 12px;
 }
 
+/* Handphone */
 @media (max-width: 600px) {
   #mg-top-none {
     margin-top: 0;
@@ -262,6 +263,8 @@ nav ul li .active {
   padding-left: 50px;
 }
 
+/* hamburger */
+
 #barsmenu {
   display: none;
 }
@@ -301,10 +304,51 @@ nav ul li .active {
   font-weight: bold;
 }
 
-@media (max-width: 600px) {
+@media screen and (min-width: 350px) and (max-width: 576px) {
   #barsmenu {
     display: block;
-    padding-right: 10px;
+    /* padding-right: 10px; */
+    margin-right: 10px;
+  }
+
+  .bar1,
+  .bar3 {
+    background-color: black;
+    width: 35px;
+    height: 5px;
+    border-radius: 20px;
+    margin-bottom: 4px;
+    transition: 0.4s;
+  }
+
+  .bar2 {
+    background-color: black;
+    width: 35px;
+    height: 5px;
+    border-radius: 20px;
+    margin-bottom: 4px;
+    transition: 0.1s;
+  }
+
+  .change .bar1 {
+    transform: translate(0px, 8px) rotate(-225deg);
+  }
+
+  .change .bar2 {
+    opacity: 0;
+  }
+
+  .change .bar3 {
+    transform: translate(0px, -9px) rotate(225deg);
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  #barsmenu {
+    display: block;
+    /* padding-right: 10px; */
+    position: absolute;
+    right: 0;
   }
 
   .bar1,
