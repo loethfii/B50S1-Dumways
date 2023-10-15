@@ -8,9 +8,13 @@ import {
   ContactMe,
   Testimonials,
   addNewProject,
+  detailProject,
+  deleteProject,
+  updateProject,
 } from "./route/route-web.js";
 
 const app = express();
+const port = 8080;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -27,7 +31,10 @@ app.get("/add-project", AddProject);
 app.post("/add-project", addNewProject);
 app.get("/contact-me", ContactMe);
 app.get("/testimonial", Testimonials);
+app.get("/detail-project/:id", detailProject);
+app.get("/delete-project/:id", deleteProject);
+app.get("/update/:id", updateProject);
 
-app.listen(4000, () => {
-  console.log("Berhasil terhubung");
+app.listen(port, () => {
+  console.log(`Terhubung ke : http://localhost:${port}`);
 });

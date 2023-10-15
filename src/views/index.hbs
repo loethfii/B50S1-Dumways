@@ -137,102 +137,54 @@
       <div class="container">
         <h1 class="text-center my-5">My Project</h1>
         <div class="row gap-4 d-flex">
-          <div class="card shadow" style="width: 26.47rem">
-            <div style="height: 270px" class="overflow-hidden">
-              <img src="/img/fotome.png" class="card-img-top" alt="..." />
-            </div>
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Dumbways Mobile app - 2021</h5>
-              <p class="card-text">durasi : 3 bulan</p>
-              <p class="card-text">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa,
-                eaque officia? Quas eius, nihil fugiat, voluptates ipsa, quis ut
-                voluptate ex optio.
-              </p>
-              <div class="d-flex gap-4 my-4">
-                <i class="fab fa-google-play fa-xl"></i>
-                <i class="fas fa-user-robot fa-xl"></i>
-                <i class="fab fa-java fa-xl"></i>
-              </div>
+          {{#each data}}
+            <div class="card shadow" style="width: 26.47rem">
+              <a href="/detail-project/{{@index}}" class="text-decoration-none text-black">
+                <div style="height: 270px" class="overflow-hidden">
+                  <img src="{{this.img}}" class="card-img-top" alt="..." />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">{{this.project_name}}</h5>
+                  <p class="card-text">{{this.duration}}</p>
+                  <p class="card-text">
+                    {{this.description}}
+                  </p>
+              </a>
+                <div class="d-flex gap-4 my-4" id="logo_tech">
+                  {{#each this.logo_tech}}
+                    <i class="{{this}}"></i>
+                  {{/each}}
+                  {{! <i class="fab fa-node fa-xl"></i>
+                  <i class="fad fa-code fa-xl"></i>
+                  <i class="fab fa-react fa-xl"></i>
+                  <i class="fab fa-js-square fa-xl"></i> }}
+                </div>
 
-              <div class="d-flex gap-4 my-4">
-                <a
-                  class="btn btn-dark hover-white w-50 rounded"
-                  href="#"
-                  role="button"
-                >Edit</a>
-                <a
-                  class="btn btn-dark hover-white w-50"
-                  href="#"
-                  role="button"
-                >Delete</a>
-              </div>
-            </div>
-          </div>
-          <div class="card shadow" style="width: 26.47rem">
-            <img src="/img/bing.webp" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Dumbways Mobile app - 2021</h5>
-              <p class="card-text">durasi : 3 bulan</p>
-              <p class="card-text">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa,
-                eaque officia? Quas eius, nihil fugiat, voluptates ipsa, quis ut
-                voluptate ex optio.
-              </p>
-              <div class="d-flex gap-4 my-4">
-                <i class="fab fa-google-play fa-xl"></i>
-                <i class="fas fa-user-robot fa-xl"></i>
-                <i class="fab fa-java fa-xl"></i>
-              </div>
+                <div class="d-flex gap-4 my-4">
+                  <a
+                    class="btn btn-dark hover-white w-50 rounded"
+                    href="/update/{{@index}}"
+                    role="button"
+                  >Edit</a>
 
-              <div class="d-flex gap-4 my-4">
-                <a
-                  class="btn btn-dark hover-white w-50 rounded"
-                  href="#"
-                  role="button"
-                >Edit</a>
-                <a
-                  class="btn btn-dark hover-white w-50"
-                  href="#"
-                  role="button"
-                >Delete</a>
+                  <a
+                   
+                    class="btn btn-dark hover-white w-50"
+                    href="/delete-project/{{@index}}"
+                    role="button"
+                  >Delete</a>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card shadow" style="width: 26.47rem">
-            <img src="/img/1.jpg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Dumbways Mobile app - 2021</h5>
-              <p class="card-text">durasi : 3 bulan</p>
-              <p class="card-text">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa,
-                eaque officia? Quas eius, nihil fugiat, voluptates ipsa, quis ut
-                voluptate ex optio.
-              </p>
-              <div class="d-flex gap-4 my-4">
-                <i class="fab fa-google-play fa-xl"></i>
-                <i class="fas fa-user-robot fa-xl"></i>
-                <i class="fab fa-java fa-xl"></i>
-              </div>
-
-              <div class="d-flex gap-4 my-4">
-                <a
-                  class="btn btn-dark hover-white w-50 rounded"
-                  href="#"
-                  role="button"
-                >Edit</a>
-                <a
-                  class="btn btn-dark hover-white w-50"
-                  href="#"
-                  role="button"
-                >Delete</a>
-              </div>
-            </div>
-          </div>
+          {{/each}}
         </div>
       </div>
     </div>
     <!-- End My Project -->
+
+    <!-- coba -->
+    <h1 class="m-5" id="number"></h1>
+    <!-- end coba -->
 
     <!-- Script -->
     <script
@@ -245,6 +197,8 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
+
+    {{!-- <script src="js/index.js"></script> --}}
     <!-- End Script -->
   </body>
 </html>

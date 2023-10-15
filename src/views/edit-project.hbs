@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Luthfi | Add Project</title>
+    <title>Luthfi | Edit Project</title>
     <link
       rel="icon"
       type="image/x-icon"
@@ -50,8 +50,7 @@
               >Home</a>
             </li>
             <li class="nav-item me-4">
-              <a class="nav-link text-dark active" href="/add-project">Add
-                Project</a>
+              <a class="nav-link text-dark" href="/add-project">Add Project</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-dark" href="/testimonial">Testimonials</a>
@@ -69,7 +68,7 @@
     <!-- form Content -->
     <div class="bg-body-secondary overflow-hidden">
       <div class="container my-5">
-        <h1 class="text-center mb-5 fw-bold">ADD MY PROJECT</h1>
+        <h1 class="text-center mb-5 fw-bold">Update MY PROJECT</h1>
         <div class="d-flex justify-content-center">
           <form class="w-75" method="POST" action="/add-project">
             <div class="mb-3">
@@ -82,6 +81,7 @@
                 aria-describedby="emailHelp"
                 style="height: 52px"
                 name="project_name"
+                value="{{data.project_name}}"
               />
             </div>
             <div class="d-flex gap-4">
@@ -94,6 +94,7 @@
                   aria-describedby="emailHelp"
                   style="height: 52px"
                   name="start_date"
+                  value="{{data.start_date}}"
                 />
               </div>
               <div class="mb-3 w-50">
@@ -105,6 +106,7 @@
                   aria-describedby="emailHelp"
                   style="height: 52px"
                   name="end_date"
+                  value="{{data.end_date}}"
                 />
               </div>
             </div>
@@ -113,6 +115,7 @@
                 for="description"
                 class="form-label fw-bold h5"
               >Description</label>
+
               <textarea
                 class="form-control"
                 id="description"
@@ -120,7 +123,7 @@
                 cols="50"
                 style="resize: none"
                 name="description"
-              ></textarea>
+              >{{data.description}}</textarea>
             </div>
             <div class="mb-3">
               <label class="form-label fw-bold h5">Technologies</label>
@@ -132,7 +135,7 @@
                       type="checkbox"
                       value="node_js"
                       name="node_js"
-                      id="flexCheckDefault"
+                      id="nodeJS"
                       style="width: 25px; height: 25px"
                     />
                     <label
@@ -148,7 +151,7 @@
                       type="checkbox"
                       value="next_js"
                       name="next_js"
-                      id="flexCheckDefault"
+                      id="next_js"
                       style="width: 25px; height: 25px"
                     />
                     <label
@@ -166,7 +169,7 @@
                       type="checkbox"
                       value="react_js"
                       name="react_js"
-                      id="flexCheckDefault"
+                      id="react_js"
                       style="width: 25px; height: 25px"
                     />
                     <label
@@ -182,7 +185,7 @@
                       type="checkbox"
                       value="typeScript"
                       name="typeScript"
-                      id="flexCheckDefault"
+                      id="typeScript"
                       style="width: 25px; height: 25px"
                     />
                     <label
@@ -218,6 +221,12 @@
       </div>
     </div>
 
+    <div style="display: none;">
+      {{#each data.logo_tech}}
+        <p class="{{@this}}">{{this}}</p>
+      {{/each}}
+    </div>
+
     <!-- end form content -->
 
     <!-- Script -->
@@ -231,6 +240,7 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
+    <script src="/js/edit.js"></script>
     <!-- End Script -->
   </body>
 </html>
