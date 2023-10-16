@@ -8,18 +8,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const TypeScript = document.getElementsByClassName("fa-js-square")[0];
   TypeScript ? (TypeScript.innerHTML = "Type_Script") : "";
 
-  switch (true) {
-    case NodeJS != undefined:
-      const nodeJSCheckBOX = document.getElementById("nodeJS");
-      nodeJSCheckBOX.setAttribute("checked", true);
-    case NextJS != undefined:
-      const nextJSCheckBOX = document.getElementById("next_js");
-      nextJSCheckBOX.setAttribute("checked", true);
-    case ReactJS != undefined:
-      const reactJSCheckbox = document.getElementById("react_js");
-      reactJSCheckbox.setAttribute("checked", true);
-    case TypeScript != undefined:
-      const typeScriptCheckbox = document.getElementById("typeScript");
-      typeScriptCheckbox.setAttribute("checked", true);
+  if (NodeJS) {
+    const nodeJSCheckBOX = document.querySelector("#nodeJS");
+    nodeJSCheckBOX.setAttribute("checked", true);
+  }
+
+  if (NextJS) {
+    const nextJSCheckBOX = document.getElementById("next_js");
+    nextJSCheckBOX.setAttribute("checked", true);
+  }
+
+  if (ReactJS) {
+    const reactJSCheckbox = document.getElementById("react_js");
+    reactJSCheckbox.setAttribute("checked", true);
+  }
+
+  if (TypeScript) {
+    const typeScriptCheckbox = document.getElementById("typeScript");
+    typeScriptCheckbox.setAttribute("checked", true);
   }
 });

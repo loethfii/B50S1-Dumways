@@ -70,7 +70,7 @@
       <div class="container my-5">
         <h1 class="text-center mb-5 fw-bold">Update MY PROJECT</h1>
         <div class="d-flex justify-content-center">
-          <form class="w-75" method="POST" action="/add-project">
+          <form class="w-75" method="POST" action="/update/{{id}}">
             <div class="mb-3">
               <label for="project-name" class="form-label fw-bold h5">Project
                 Name</label>
@@ -221,7 +221,7 @@
       </div>
     </div>
 
-    <div style="display: none;">
+    <div style="display:none">
       {{#each data.logo_tech}}
         <p class="{{@this}}">{{this}}</p>
       {{/each}}
