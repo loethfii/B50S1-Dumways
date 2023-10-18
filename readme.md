@@ -12,4 +12,4 @@
 
 ## Credits
 
-- [Arif Luthfi Romadhoni](https://github.com/loethfii?tab=repositories)
+[Arif Luthfi Romadhoni](https://github.com/loethfii?tab=repositories)
