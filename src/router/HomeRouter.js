@@ -1,8 +1,8 @@
-import express from "express";
-import { Index } from "../controller/HomeController.js";
+const express = require("express");
+const { Index } = require("../controller/HomeController.js");
 
 const router = express.Router();
 
 router.get("/", Index);
 
-export default router;
+module.exports = router;

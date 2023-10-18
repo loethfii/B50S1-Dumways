@@ -81,7 +81,7 @@
                 aria-describedby="emailHelp"
                 style="height: 52px"
                 name="project_name"
-                value="{{data.project_name}}"
+                value="{{data.projectName}}"
               />
             </div>
             <div class="d-flex gap-4">
@@ -94,7 +94,7 @@
                   aria-describedby="emailHelp"
                   style="height: 52px"
                   name="start_date"
-                  value="{{data.start_date}}"
+                  value="{{data.newDateStart}}"
                 />
               </div>
               <div class="mb-3 w-50">
@@ -106,7 +106,7 @@
                   aria-describedby="emailHelp"
                   style="height: 52px"
                   name="end_date"
-                  value="{{data.end_date}}"
+                  value="{{data.newDateENd}}"
                 />
               </div>
             </div>
@@ -222,7 +222,7 @@
     </div>
 
     <div style="display:none">
-      {{#each data.logo_tech}}
+      {{#each data.technologies}}
         <p class="{{@this}}">{{this}}</p>
       {{/each}}
     </div>

@@ -9,4 +9,4 @@ function countMounth(start_date, end_date) {
   return `${eDay} Day, ${eMonth} Month`;
 }
 
-export { countMounth };
+module.exports = { countMounth };

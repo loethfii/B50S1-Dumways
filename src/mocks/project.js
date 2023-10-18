@@ -31,4 +31,4 @@ let dataProject = [
   // },
 ];
 
-export { dataProject };
+module.exports = { dataProject };

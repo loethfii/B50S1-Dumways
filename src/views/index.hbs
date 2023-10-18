@@ -139,19 +139,19 @@
         <div class="row gap-4 d-flex">
           {{#each data}}
             <div class="card shadow" style="width: 26.47rem">
-              <a href="/detail-project/{{@index}}" class="text-decoration-none text-black">
+              <a href="/detail-project/{{this.id}}" class="text-decoration-none text-black">
                 <div style="height: 270px" class="overflow-hidden">
                   <img src="{{this.img}}" class="card-img-top" alt="..." />
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title fw-bold">{{this.project_name}}</h5>
+                  <h5 class="card-title fw-bold">{{this.projectName}}</h5>
                   <p class="card-text">{{this.duration}}</p>
                   <p class="card-text">
                     {{this.description}}
                   </p>
               </a>
                 <div class="d-flex gap-4 my-4" id="logo_tech">
-                  {{#each this.logo_tech}}
+                  {{#each this.technologies}}
                     <i class="{{this}}"></i>
                   {{/each}}
                   {{! <i class="fab fa-node fa-xl"></i>
@@ -163,14 +163,14 @@
                 <div class="d-flex gap-4 my-4">
                   <a
                     class="btn btn-dark hover-white w-50 rounded"
-                    href="/update/{{@index}}"
+                    href="/update/{{this.id}}"
                     role="button"
                   >Edit</a>
 
                   <a
                    
                     class="btn btn-dark hover-white w-50"
-                    href="/delete-project/{{@index}}"
+                    href="/delete-project/{{this.id}}"
                     role="button"
                   >Delete</a>
                 </div>
