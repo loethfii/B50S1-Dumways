@@ -8,7 +8,11 @@ const Index = async (req, res) => {
     const query = `SELECT id, img, "projectName", "startDate", "endDate", duration, description, technologies, "createdAt", "updatedAt" from "Projects"
     order by id desc`;
     let obj = await sequelize.query(query, { type: QueryTypes.SELECT });
-    res.render("index", { data: obj });
+    res.render("index", {
+      data: obj,
+      isLogin: req.session.isLogin,
+      user: req.session.user,
+    });
   } catch (error) {
     console.error(error, ">>>>> Error pada select");
   }

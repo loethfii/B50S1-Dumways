@@ -25,8 +25,23 @@
       href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css"
     />
     <link rel="stylesheet" href="/css/universal.css" />
+    {{#if isLogin}}
+    <style>
+      #edit_card, #delete_card{
+        display:block;
+      }
+    </style>
+    {{else}}
+    <style>
+      #edit_card, #delete_card{
+        display:none;
+      }
+    </style>
+    {{/if}}
+    
   </head>
   <body>
+    
     <!-- Nabvar -->
     <nav class="navbar navbar-expand-lg bg-nav-color py-3 sticky-top">
       <div class="container">
@@ -53,13 +68,35 @@
                 href="/"
               >Home</a>
             </li>
+            {{#if isLogin}}
             <li class="nav-item me-4">
               <a class="nav-link text-dark" href="/add-project">Add Project</a>
             </li>
+            {{/if}}
             <li class="nav-item">
               <a class="nav-link text-dark" href="/testimonial">Testimonials</a>
             </li>
           </ul>
+          {{#if isLogin}}
+            <ul class="navbar-nav me-4 mb-2 mb-lg-0 h5 gap-3">
+                <li class="nav-item">
+                  <a class="nav-link text-dark" href="/register">{{user}}</a>
+                </li>
+                <li>
+                  <a class="nav-link text-dark" href="/logout">Logout</a>
+                </li>
+            </ul>
+          {{else}}
+          <ul class="navbar-nav me-4 mb-2 mb-lg-0 h5 gap-3">
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="/register">Register</a>
+              </li>
+              <li>
+                <a class="nav-link text-dark" href="/login">Login</a>
+              </li>
+          </ul>
+          {{/if}}
+          
           <a
             class="btn btn-dark hover-white"
             type="submit"
@@ -154,24 +191,20 @@
                   {{#each this.technologies}}
                     <i class="{{this}}"></i>
                   {{/each}}
-                  {{! <i class="fab fa-node fa-xl"></i>
-                  <i class="fad fa-code fa-xl"></i>
-                  <i class="fab fa-react fa-xl"></i>
-                  <i class="fab fa-js-square fa-xl"></i> }}
-                </div>
 
-                <div class="d-flex gap-4 my-4">
+                </div>
+                <div class="d-flex gap-4 my-4" >
                   <a
                     class="btn btn-dark hover-white w-50 rounded"
                     href="/update/{{this.id}}"
                     role="button"
+                    id="edit_card"
                   >Edit</a>
-
                   <a
-                   
                     class="btn btn-dark hover-white w-50"
                     href="/delete-project/{{this.id}}"
                     role="button"
+                    id="delete_card"
                   >Delete</a>
                 </div>
               </div>
@@ -184,6 +217,8 @@
 
     <!-- coba -->
     <h1 class="m-5" id="number"></h1>
+    {{!-- <h1>{{user}}</h1>
+    <h1>{{isLogin}}</h1> --}}
     <!-- end coba -->
 
     <!-- Script -->

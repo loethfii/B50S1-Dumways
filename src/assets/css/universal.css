@@ -14,3 +14,22 @@
 .active {
   font-weight: bold;
 }
+
+.relative_password {
+  /* border: 2px solid red; */
+  position: relative;
+}
+
+.relative_password .icon-abso {
+  position: absolute;
+  top: 50%;
+  right: 3%;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.dsp {
+  display: none;
+}

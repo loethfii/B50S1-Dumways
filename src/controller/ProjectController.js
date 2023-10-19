@@ -5,7 +5,19 @@ const { Sequelize, QueryTypes } = require("sequelize");
 const sequelize = new Sequelize(config.development);
 
 const AddProject = (req, res) => {
-  res.render("add-project");
+  let sessionTest = {
+    isLogin: req.session.isLogin,
+    user: req.session.user,
+  };
+
+  if (!sessionTest.isLogin) {
+    res.render("unauthorized");
+  } else {
+    res.render("add-project", {
+      isLogin: req.session.isLogin,
+      user: req.session.user,
+    });
+  }
 };
 
 const AddNewProject = async (req, res) => {
@@ -54,20 +66,34 @@ const AddNewProject = async (req, res) => {
 
 const UpdateProject = async (req, res) => {
   try {
-    const { id } = req.params;
+    let sessionTest = {
+      isLogin: req.session.isLogin,
+      user: req.session.user,
+    };
 
-    let query = `SELECT * FROM public."Projects" WHERE id = ${id}`;
-    let dataID = await sequelize.query(query, { type: QueryTypes.SELECT });
-    let dateStart = dataID[0].startDate;
-    let dateEnd = dataID[0].endDate;
+    if (!sessionTest.isLogin) {
+      res.render("unauthorized");
+    } else {
+      const { id } = req.params;
 
-    const newDataId = dataID.map((res) => ({
-      ...res,
-      newDateStart: new Date(dateStart).toISOString().split("T")[0],
-      newDateENd: new Date(dateEnd).toISOString().split("T")[0],
-    }));
+      let query = `SELECT * FROM public."Projects" WHERE id = ${id}`;
+      let dataID = await sequelize.query(query, { type: QueryTypes.SELECT });
+      let dateStart = dataID[0].startDate;
+      let dateEnd = dataID[0].endDate;
 
-    res.render("edit-project", { data: newDataId[0], id });
+      const newDataId = dataID.map((res) => ({
+        ...res,
+        newDateStart: new Date(dateStart).toISOString().split("T")[0],
+        newDateENd: new Date(dateEnd).toISOString().split("T")[0],
+      }));
+
+      res.render("edit-project", {
+        data: newDataId[0],
+        id,
+        isLogin: req.session.isLogin,
+        user: req.session.user,
+      });
+    }
   } catch (error) {
     console.error(error);
   }
@@ -139,7 +165,11 @@ const DetailProject = async (req, res) => {
     let dataByID = await sequelize.query(query, { type: QueryTypes.SELECT });
 
     dataByID.forEach((dataObj) => {
-      res.render("detail-project", { data: dataObj });
+      res.render("detail-project", {
+        data: dataObj,
+        isLogin: req.session.isLogin,
+        user: req.session.user,
+      });
     });
   } catch (error) {
     console.error(error, ">>>>>>>> Detail Project");
