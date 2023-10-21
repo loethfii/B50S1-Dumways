@@ -45,7 +45,6 @@ const AddNewProject = async (req, res) => {
     });
 
     let data = {
-      img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
       project_name,
       start_date,
       end_date,
@@ -54,8 +53,11 @@ const AddNewProject = async (req, res) => {
       logo_tech: dataFiltered,
     };
 
-    let query = `INSERT INTO "Projects"(img, "projectName", "startDate", "endDate", duration, description, technologies)
-    VALUES ('${data.img}', '${data.project_name}', '${data.start_date}', '${data.end_date}' , '${data.duration}', '${data.description}', '{${dataFiltered}}')`;
+    const userId = req.session.userId;
+    const image = req.file.filename;
+
+    let query = `INSERT INTO projects(img, "projectName", "startDate", "endDate", duration, description, technologies, user_id)
+    VALUES ('${image}', '${data.project_name}', '${data.start_date}', '${data.end_date}' , '${data.duration}', '${data.description}', '{${dataFiltered}}', ${userId})`;
     let inserted = await sequelize.query(query);
 
     res.redirect("/");
@@ -76,11 +78,23 @@ const UpdateProject = async (req, res) => {
     } else {
       const { id } = req.params;
 
-      let query = `SELECT * FROM public."Projects" WHERE id = ${id}`;
+      let qCheckIdUser = `SELECT p.id, p.user_id from projects as p
+      left join users as u on p.user_id = u.id 
+      where p.user_id = ${req.session.userId} and p.id = ${id}
+      order by p.id desc`;
+
+      let dataCheck = await sequelize.query(qCheckIdUser, {
+        type: QueryTypes.SELECT,
+      });
+      console.log(dataCheck[0]);
+      if (!dataCheck[0]) {
+        return res.render("notFound.hbs");
+      }
+
+      let query = `SELECT * FROM public.projects WHERE id = ${id}`;
       let dataID = await sequelize.query(query, { type: QueryTypes.SELECT });
       let dateStart = dataID[0].startDate;
       let dateEnd = dataID[0].endDate;
-
       const newDataId = dataID.map((res) => ({
         ...res,
         newDateStart: new Date(dateStart).toISOString().split("T")[0],
@@ -126,7 +140,6 @@ const UpdateNewData = async (req, res) => {
     });
 
     let newData = {
-      img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
       project_name,
       start_date,
       end_date,
@@ -135,7 +148,8 @@ const UpdateNewData = async (req, res) => {
       logo_tech: dataFiltered,
     };
 
-    let query = `UPDATE public."Projects" SET img = '${newData.img}', "projectName" = '${newData.project_name}', "startDate" = '${newData.start_date}', "endDate" = '${newData.end_date}', duration = '${newData.duration}', description = '${newData.description}', technologies = '{${dataFiltered}}', "updatedAt" = now() where id = ${id}`;
+    const image = req.file.filename;
+    let query = `UPDATE public.projects SET img = '${image}', "projectName" = '${newData.project_name}', "startDate" = '${newData.start_date}', "endDate" = '${newData.end_date}', duration = '${newData.duration}', description = '${newData.description}', technologies = '{${dataFiltered}}', "updatedAt" = now() where id = ${id}`;
     await sequelize.query(query, { type: QueryTypes.UPDATE });
 
     res.redirect("/");
@@ -146,13 +160,22 @@ const UpdateNewData = async (req, res) => {
 
 const DeleteProject = async (req, res) => {
   try {
-    const { id } = req.params;
-    const query = `DELETE FROM "Projects" WHERE id = ${id}`;
-    await sequelize.query(query, { type: QueryTypes.DELETE });
+    let sessionTest = {
+      isLogin: req.session.isLogin,
+      user: req.session.user,
+    };
 
-    console.error("berhasil Hapus");
+    if (!sessionTest.isLogin) {
+      res.render("unauthorized");
+    } else {
+      const { id } = req.params;
+      const query = `DELETE FROM projects WHERE id = ${id}`;
+      await sequelize.query(query, { type: QueryTypes.DELETE });
 
-    res.redirect("/");
+      console.error("berhasil Hapus");
+
+      res.redirect("/");
+    }
   } catch (error) {
     console.error(error, "<<<<<<< error Delete");
   }
@@ -161,8 +184,9 @@ const DeleteProject = async (req, res) => {
 const DetailProject = async (req, res) => {
   try {
     let { id } = req.params;
-    const query = `SELECT * FROM "Projects" WHERE id = ${id}`;
+    const query = `SELECT * FROM projects WHERE id = ${id}`;
     let dataByID = await sequelize.query(query, { type: QueryTypes.SELECT });
+    console.log(dataByID);
 
     dataByID.forEach((dataObj) => {
       res.render("detail-project", {

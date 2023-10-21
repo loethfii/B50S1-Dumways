@@ -89,7 +89,7 @@
       <div class="container my-5">
         <h1 class="text-center mb-5 fw-bold">Update MY PROJECT</h1>
         <div class="d-flex justify-content-center">
-          <form class="w-75" method="POST" action="/update/{{id}}">
+          <form class="w-75 w-full" method="POST" action="/update/{{id}}" enctype="multipart/form-data">
             <div class="mb-3">
               <label for="project-name" class="form-label fw-bold h5">Project
                 Name</label>
@@ -101,6 +101,7 @@
                 style="height: 52px"
                 name="project_name"
                 value="{{data.projectName}}"
+                required
               />
             </div>
             <div class="d-flex gap-4">
@@ -114,6 +115,7 @@
                   style="height: 52px"
                   name="start_date"
                   value="{{data.newDateStart}}"
+                  required
                 />
               </div>
               <div class="mb-3 w-50">
@@ -126,6 +128,7 @@
                   style="height: 52px"
                   name="end_date"
                   value="{{data.newDateENd}}"
+                  required
                 />
               </div>
             </div>
@@ -222,11 +225,20 @@
                 Image</label>
               <input
                 class="form-control form-control-lg"
-                id="formFileLg"
+                id="testViewImage"
                 type="file"
+                name="upload-image" 
+                required
               />
             </div>
-
+            <div class="mb-3">
+              <div class="alert alert-warning dsp" id="errorImage" role="alert">
+                file bukan png atau jpg! - pastikan file berformat '.png' atau '.jpg'
+              </div>
+              <div class="pViewImage shadow-lg dsp" id="pViewImage">
+                <img id="vImage" src="#" alt="your image" class="viewImage" />
+              </div>
+            </div>
             <div class="d-flex justify-content-end">
               <button
                 type="submit"
@@ -239,6 +251,8 @@
         </div>
       </div>
     </div>
+
+    
 
     <div style="display:none">
       {{#each data.technologies}}

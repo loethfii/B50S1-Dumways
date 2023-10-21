@@ -110,7 +110,7 @@
     <div class="bg-body-secondary overflow-hidden">
       <div class="container my-5">
         <div class="card shadow">
-          <div class="container m-5">
+          <div class="container m-5 media-hp">
             <div class="row">
               <div class="col-md-6">
                 <h1>Hi Welcome to my hut</h1>
@@ -126,7 +126,7 @@
                   materi tech terbaru ayo aja saya mah. Semangat berjuang kawan,
                   jangan menyerah pantang mundur, semoga sukses slalu all.
                 </p>
-                <div class="d-flex align-items-center mt-5">
+                <div class="d-flex align-items-center mt-5 media-contact">
                   <button
                     class="btn btn-dark hover-white me-3 rounded-pill w-25"
                   >
@@ -145,10 +145,10 @@
                   <i class="fab fa-twitter fa-3x"></i>
                 </div>
               </div>
-              <div class="col-md-6 ps-5">
+              <div class="col-md-6 ps-5 media-card-p">
                 <div
-                  class="card shadow w-75 rounded justify-content-end"
-                  style="width: 18rem"
+                  class="card shadow w-75 rounded justify-content-end media-size-profile"
+                  style="width: 18rem" 
                 >
                   <img
                     src="/img/fotome.png"
@@ -177,13 +177,14 @@
           {{#each data}}
             <div class="card shadow" style="width: 26.47rem">
               <a href="/detail-project/{{this.id}}" class="text-decoration-none text-black">
-                <div style="height: 270px" class="overflow-hidden">
-                  <img src="{{this.img}}" class="card-img-top" alt="..." />
+                <div class="overflow-hidden p-img">
+                  <img src="/{{this.img}}" class="card-img-top" alt="..." />
                 </div>
                 <div class="card-body">
                   <h5 class="card-title fw-bold">{{this.projectName}}</h5>
-                  <p class="card-text">{{this.duration}}</p>
-                  <p class="card-text">
+                  <p >Author : <span class="font-monospace">{{this.name}}</span></p>
+                  <p class="card-text" style="margin-top: -15px;">{{this.duration}}</p>
+                  <p class="card-text description-txt">
                     {{this.description}}
                   </p>
               </a>

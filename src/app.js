@@ -31,6 +31,7 @@ app.use(
 app.use(express.urlencoded({ extended: false }));
 
 app.use(express.static("src/assets"));
+app.use(express.static("src/uploads"));
 
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "/views"));

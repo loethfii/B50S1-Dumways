@@ -27,4 +27,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const typeScriptCheckbox = document.getElementById("typeScript");
     typeScriptCheckbox.setAttribute("checked", true);
   }
+
+  const image = document.querySelector("#testViewImage");
+  const vIMG = document.querySelector("#vImage");
+  const pView = document.querySelector("#pViewImage");
+  const errImage = document.querySelector("#errorImage");
+  image.onchange = (evt) => {
+    const [file] = image.files;
+    console.log(file.name);
+    console.log(file.name.includes(".jpg", ".png"));
+    let imgDetect = {
+      isJpg: file.name.includes(".jpg"),
+      isPng: file.name.includes(".png"),
+    };
+    if (imgDetect.isJpg || imgDetect.isPng) {
+      vIMG.src = URL.createObjectURL(file);
+      pView.classList.remove("dsp");
+      errImage.classList.add("dsp");
+    } else {
+      errImage.classList.remove("dsp");
+      pView.classList.add("dsp");
+      // errImage.innerHTML = "File bukan gambar!";
+    }
+  };
 });

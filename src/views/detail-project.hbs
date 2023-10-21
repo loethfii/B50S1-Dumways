@@ -97,10 +97,10 @@
         <div class="row mt-4">
           <div class="col-md-6 overflow-hidden">
             <div class="card" style="max-height: 350px">
-              <img src="{{data.img}}" style="height: 100%" />
+              <img src="/{{data.img}}" style="height: 100%" />
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 media-detail">
             <div class="ms-2">
               <h4 class="fw-bold" style="margin-bottom: 0">Duration</h4>
               <div class="d-flex gap-3 align-items-center">
@@ -124,7 +124,10 @@
           </div>
         </div>
         <div class="row">
-          <p class="h6 mt-3" style="text-align: justify; line-height: 28px">
+          <p
+            class="h6 mt-3"
+            style="text-align: justify; line-height: 28px; text-indent: 0.5in"
+          >
             {{data.description}}
           </p>
         </div>

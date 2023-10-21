@@ -90,7 +90,12 @@
       <div class="container my-5">
         <h1 class="text-center mb-5 fw-bold">ADD MY PROJECT</h1>
         <div class="d-flex justify-content-center">
-          <form class="w-75" method="POST" action="/add-project">
+          <form
+            class="w-75 w-full"
+            method="POST"
+            action="/add-project"
+            enctype="multipart/form-data"
+          >
             <div class="mb-3">
               <label for="project-name" class="form-label fw-bold h5">Project
                 Name</label>
@@ -101,6 +106,7 @@
                 aria-describedby="emailHelp"
                 style="height: 52px"
                 name="project_name"
+                required
               />
             </div>
             <div class="d-flex gap-4">
@@ -113,6 +119,7 @@
                   aria-describedby="emailHelp"
                   style="height: 52px"
                   name="start_date"
+                  required
                 />
               </div>
               <div class="mb-3 w-50">
@@ -124,6 +131,7 @@
                   aria-describedby="emailHelp"
                   style="height: 52px"
                   name="end_date"
+                  required
                 />
               </div>
             </div>
@@ -139,6 +147,7 @@
                 cols="50"
                 style="resize: none"
                 name="description"
+                required
               ></textarea>
             </div>
             <div class="mb-3">
@@ -219,9 +228,20 @@
                 Image</label>
               <input
                 class="form-control form-control-lg"
-                id="formFileLg"
+                id="testViewImage"
                 type="file"
+                name="upload-image"
+                required
               />
+            </div>
+            <div class="mb-3">
+              <div class="alert alert-warning dsp" id="errorImage" role="alert">
+                file bukan png atau jpg! - pastikan file berformat '.png' atau
+                '.jpg'
+              </div>
+              <div class="pViewImage shadow-lg dsp" id="pViewImage">
+                <img id="vImage" src="#" alt="your image" class="viewImage" />
+              </div>
             </div>
 
             <div class="d-flex justify-content-end">
@@ -250,6 +270,7 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
+    <script src="/js/edit.js"></script>
     <!-- End Script -->
   </body>
 </html>

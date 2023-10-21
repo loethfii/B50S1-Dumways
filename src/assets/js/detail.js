@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
   typeScriptTagP.classList.add("pt-3");
   typeScriptTagP.textContent = "TypeScript";
 
-  if (reactJS) {
+  if (typeScript) {
     typeScript.parentNode.insertBefore(typeScriptTagP, typeScript.nextSibling);
   }
 });
