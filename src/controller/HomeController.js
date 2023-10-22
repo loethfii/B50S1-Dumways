@@ -27,7 +27,6 @@ const Index = async (req, res) => {
         userName: req.session.user,
         isLogin: req.session.isLogin,
       }));
-      console.log();
       res.render("index", {
         data: parseData,
         isLogin: req.session.isLogin,

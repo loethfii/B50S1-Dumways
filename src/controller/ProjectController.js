@@ -86,7 +86,6 @@ const UpdateProject = async (req, res) => {
       let dataCheck = await sequelize.query(qCheckIdUser, {
         type: QueryTypes.SELECT,
       });
-      console.log(dataCheck[0]);
       if (!dataCheck[0]) {
         return res.render("notFound");
       }
@@ -148,8 +147,17 @@ const UpdateNewData = async (req, res) => {
       logo_tech: dataFiltered,
     };
 
-    const image = req.file.filename;
-    let query = `UPDATE public.projects SET img = '${image}', "projectName" = '${newData.project_name}', "startDate" = '${newData.start_date}', "endDate" = '${newData.end_date}', duration = '${newData.duration}', description = '${newData.description}', technologies = '{${dataFiltered}}', "updatedAt" = now() where id = ${id}`;
+    let updateImage = "";
+    let imgQuery = `select img from projects where id = ${id}`;
+    let oldImage = await sequelize.query(imgQuery, {
+      type: QueryTypes.SELECT,
+    });
+
+    const newImage = req.file?.filename;
+
+    newImage ? (updateImage = newImage) : (updateImage = oldImage[0].img);
+
+    let query = `UPDATE public.projects SET img = '${updateImage}', "projectName" = '${newData.project_name}', "startDate" = '${newData.start_date}', "endDate" = '${newData.end_date}', duration = '${newData.duration}', description = '${newData.description}', technologies = '{${dataFiltered}}', "updatedAt" = now() where id = ${id}`;
     await sequelize.query(query, { type: QueryTypes.UPDATE });
 
     res.redirect("/");
@@ -186,7 +194,6 @@ const DetailProject = async (req, res) => {
     let { id } = req.params;
     const query = `SELECT * FROM projects WHERE id = ${id}`;
     let dataByID = await sequelize.query(query, { type: QueryTypes.SELECT });
-    console.log(dataByID);
 
     dataByID.forEach((dataObj) => {
       res.render("detail-project", {
