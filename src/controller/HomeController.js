@@ -25,6 +25,7 @@ const Index = async (req, res) => {
       let parseData = obj.map((res) => ({
         ...res,
         userName: req.session.user,
+        isLogin: req.session.isLogin,
       }));
       console.log();
       res.render("index", {

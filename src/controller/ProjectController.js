@@ -74,7 +74,7 @@ const UpdateProject = async (req, res) => {
     };
 
     if (!sessionTest.isLogin) {
-      res.render("unauthorized");
+      res.render("notFound");
     } else {
       const { id } = req.params;
 
@@ -88,7 +88,7 @@ const UpdateProject = async (req, res) => {
       });
       console.log(dataCheck[0]);
       if (!dataCheck[0]) {
-        return res.render("notFound.hbs");
+        return res.render("notFound");
       }
 
       let query = `SELECT * FROM public.projects WHERE id = ${id}`;
@@ -166,13 +166,13 @@ const DeleteProject = async (req, res) => {
     };
 
     if (!sessionTest.isLogin) {
-      res.render("unauthorized");
+      res.redirect("/");
     } else {
       const { id } = req.params;
-      const query = `DELETE FROM projects WHERE id = ${id}`;
-      await sequelize.query(query, { type: QueryTypes.DELETE });
 
-      console.error("berhasil Hapus");
+      // const query = `DELETE FROM projects WHERE id = ${id} and `;
+      const query = `DELETE FROM projects WHERE id = ${id} and user_id = ${req.session.userId};`;
+      await sequelize.query(query, { type: QueryTypes.DELETE });
 
       res.redirect("/");
     }

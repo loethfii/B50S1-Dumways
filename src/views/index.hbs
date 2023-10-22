@@ -25,7 +25,7 @@
       href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css"
     />
     <link rel="stylesheet" href="/css/universal.css" />
-    {{#if isLogin}}
+    {{!-- {{#if isLogin}}
     <style>
       #edit_card, #delete_card{
         display:block;
@@ -37,7 +37,7 @@
         display:none;
       }
     </style>
-    {{/if}}
+    {{/if}} --}}
     
   </head>
   <body>
@@ -194,6 +194,7 @@
                   {{/each}}
 
                 </div>
+                {{#if this.isLogin}}
                 <div class="d-flex gap-4 my-4" >
                   <a
                     class="btn btn-dark hover-white w-50 rounded"
@@ -208,6 +209,7 @@
                     id="delete_card"
                   >Delete</a>
                 </div>
+                {{/if}}
               </div>
             </div>
           {{/each}}
